@@ -4,7 +4,7 @@ class Counter extends Component {
     state = {
         count: 0,
         // imgUrl: 'https://picsum.photos/200'
-        tags: [] //fill this, and unfill to see
+        tags: ['tag1', 'tag2', 'tag3']
     };
 
     style = {
@@ -12,19 +12,23 @@ class Counter extends Component {
         fontWeight: "bold",
     };
 
-    renderTags() {
-        if (this.state.tags.length === 0) return <p>There are no tags!</p>;
-        return <ul>
-            {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-        </ul>
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this) //binding event handler cuz event cant access 'this'
+    // }
+
+    handleIncrement = () => {
+        console.log("Increment Clicked", this);
     }
+
     render() {
 
         return (
-            <div>
-                {this.state.tags.length === 0 && 'Please create new tag'}
-                {this.renderTags()}
-            </div>
+            <React.Fragment>
+                {/* <img src={this.state.imgUrl} alt="" /> */}
+                <span style={this.style} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                <button onClick={this.handleIncrement} style={{ fontSize: 15 }} className="btn btn-secondary btn-sm">Increment</button>
+            </React.Fragment>
         );
     }
 
