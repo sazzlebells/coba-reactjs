@@ -22,9 +22,12 @@ class Counter extends Component {
     this.setState({ value: this.state.value + 1 });
   };
 
+  onDelete = () => {};
+
   render() {
     return (
       <React.Fragment>
+        <h4>{this.props.id}</h4>
         {/* <img src={this.state.imgUrl} alt="" /> */}
         <span style={this.style} className={this.getBadgeClasses()}>
           {this.formatCount()}
@@ -35,6 +38,12 @@ class Counter extends Component {
           className="btn btn-secondary btn-sm"
         >
           Increment
+        </button>
+        <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Delete
         </button>
         <br />
       </React.Fragment>
