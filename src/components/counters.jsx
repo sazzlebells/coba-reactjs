@@ -22,7 +22,7 @@ class Counters extends Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
-    console.log(this.state.counters[0]);
+    // console.log(this.state.counters[0]);
     this.setState({ counters });
   };
 

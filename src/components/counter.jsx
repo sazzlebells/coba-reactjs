@@ -16,7 +16,8 @@ class Counter extends Component {
   render() {
     return (
       <React.Fragment>
-        <h4>{this.props.id}</h4>
+        <br />
+        {/* <h4>{this.props.id}</h4> */}
         {/* <img src={this.state.imgUrl} alt="" /> */}
         <span style={this.style} className={this.getBadgeClasses()}>
           {this.formatCount()}
