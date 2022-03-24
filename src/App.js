@@ -15,6 +15,17 @@ class App extends Component {
     ],
   };
 
+  constructor(props) {
+    super(props);
+    console.log("App - Constructor", this.props);
+    // this.state = this.props.something;
+  }
+
+  componentDidMount() {
+    //ajax call
+    console.log("App - Mounted");
+  }
+
   handleDelete = (counterId) => {
     // console.log("Event handler called", counterId);
     const counters = this.state.counters.filter((c) => c.id !== counterId);
@@ -39,6 +50,7 @@ class App extends Component {
   };
 
   render() {
+    console.log("App - Render");
     return (
       <div className="App">
         <React.Fragment>

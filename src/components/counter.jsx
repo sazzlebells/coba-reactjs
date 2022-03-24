@@ -11,9 +11,23 @@ class Counter extends Component {
   //     this.handleIncrement = this.handleIncrement.bind(this) //binding event handler cuz event cant access 'this'
   // }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      //Ajax call get new data from server
+      console.log("new data");
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("Counter unmount");
+  }
+
   onDelete = () => {};
 
   render() {
+    console.log("counter - render");
     return (
       <React.Fragment>
         <br />
